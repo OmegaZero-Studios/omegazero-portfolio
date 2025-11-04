@@ -130,9 +130,9 @@ export default function RootLayout({
           addressCountry: "Bangladesh",
         },
         sameAs: [
-          "https://github.com/nazmulhaque",
-          "https://linkedin.com/in/nazmulhaque",
-          "https://crapsee.live",
+          "https://github.com/NazmulHridoy",
+          "https://www.linkedin.com/in/nazmul55/",
+          "https://discord.gg/KvtNANquPN",
         ],
         knowsAbout: [
           {

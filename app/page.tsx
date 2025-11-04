@@ -637,11 +637,11 @@ export default function Portfolio() {
                     <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>+880 1852 114544</div>
                   </div>
                 </a>
-                <a href="skype:nazmulredoy.csecu?chat" className={`flex items-center space-x-3 p-3 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${isDarkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-50'}`} aria-label="Chat on Skype with nazmulredoy.csecu">
+                <a href="https://discord.gg/KvtNANquPN" target="_blank" rel="noopener noreferrer" className={`flex items-center space-x-3 p-3 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${isDarkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-50'}`} aria-label="Join Discord server - viperhridoy">
                   <div className="text-blue-400 text-xl" aria-hidden="true">💬</div>
                   <div>
-                    <div className="font-semibold">Skype</div>
-                    <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>nazmulredoy.csecu</div>
+                    <div className="font-semibold">Discord</div>
+                    <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>viperhridoy</div>
                   </div>
                 </a>
                 <div className="flex items-center space-x-3 p-3 rounded-lg">
@@ -654,10 +654,10 @@ export default function Portfolio() {
               </div>
               <div className={`mt-8 pt-6 border-t ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`}>
                 <div className="flex space-x-4">
-                  <a href="https://github.com/nazmulhaque" target="_blank" rel="noopener noreferrer" className={`p-3 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-100 hover:bg-gray-200'}`} aria-label="Visit Nazmul Haque's GitHub profile">
+                  <a href="https://github.com/NazmulHridoy" target="_blank" rel="noopener noreferrer" className={`p-3 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-100 hover:bg-gray-200'}`} aria-label="Visit Nazmul Haque's GitHub profile">
                     <Github size={24} aria-hidden="true" />
                   </a>
-                  <a href="https://linkedin.com/in/nazmulhaque" target="_blank" rel="noopener noreferrer" className={`p-3 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-100 hover:bg-gray-200'}`} aria-label="Visit Nazmul Haque's LinkedIn profile">
+                  <a href="https://www.linkedin.com/in/nazmul55/" target="_blank" rel="noopener noreferrer" className={`p-3 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-100 hover:bg-gray-200'}`} aria-label="Visit Nazmul Haque's LinkedIn profile">
                     <Linkedin size={24} aria-hidden="true" />
                   </a>
                 </div>

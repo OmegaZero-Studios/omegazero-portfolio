@@ -136,7 +136,7 @@ npm start
 
 - **Email**: nazmulredoy.csecu@gmail.com
 - **Phone**: +880 1852 114544
-- **Skype**: nazmulredoy.csecu
-- **GitHub**: [nazmulhaque](https://github.com/nazmulhaque)
-- **LinkedIn**: [nazmulhaque](https://linkedin.com/in/nazmulhaque)
-- **Website**: [crapsee.live](https://crapsee.live)
+- **Discord**: viperhridoy
+- **GitHub**: [NazmulHridoy](https://github.com/NazmulHridoy)
+- **LinkedIn**: [nazmul55](https://www.linkedin.com/in/nazmul55/)
+- **Discord Server**: [OmegaZero Studios](https://discord.gg/KvtNANquPN)
