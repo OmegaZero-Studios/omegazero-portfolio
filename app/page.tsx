@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Menu, X, Github, Linkedin, Mail, ExternalLink, Moon, Sun, ChevronDown } from 'lucide-react';
 
 interface Game {
@@ -10,6 +11,7 @@ interface Game {
   role: string;
   team: string;
   duration: string;
+  image: string;
   links: {
     playStore?: string;
     appStore?: string;
@@ -76,6 +78,7 @@ export default function Portfolio() {
       role: "Team Lead & Lead Programmer",
       team: "6 members",
       duration: "May 2021 - Feb 2025",
+      image: "/images/games/crapsee.png",
       links: {
         playStore: "https://play.google.com/store/apps/details?id=com.orangeblack.crapsee",
         appStore: "https://apps.apple.com/us/app/crapsee-the-craps-game-app/id1613172827",
@@ -89,6 +92,7 @@ export default function Portfolio() {
       role: "Team Lead & Programmer",
       team: "2 members",
       duration: "Jul 2020 - Feb 2021",
+      image: "/images/games/water-slipper.png",
       links: {
         appStore: "https://apps.apple.com/us/app/water-slipper/id1526680629"
       }
@@ -100,6 +104,7 @@ export default function Portfolio() {
       role: "Team Lead & Programmer",
       team: "2 members",
       duration: "May 2020 - Jul 2020",
+      image: "/images/games/fire-escape-3d.png",
       links: {
         playStore: "https://play.google.com/store/apps/details?id=com.BYgames.FireEscape3D"
       }
@@ -111,6 +116,7 @@ export default function Portfolio() {
       role: "Team Lead & Programmer",
       team: "2 members",
       duration: "Apr 2020 - May 2020",
+      image: "/images/games/tube-man.png",
       links: {
         playStore: "https://play.google.com/store/apps/details?id=com.byvlgames.TubeMan"
       }
@@ -122,6 +128,7 @@ export default function Portfolio() {
       role: "Team Lead & Programmer",
       team: "2 members",
       duration: "Apr 2020",
+      image: "/images/games/crazy-chemist.png",
       links: {
         playStore: "https://play.google.com/store/apps/details?id=com.BYgames.CrazyChemist"
       }
@@ -133,6 +140,7 @@ export default function Portfolio() {
       role: "Programmer & VFX Artist",
       team: "5 members",
       duration: "Aug 2017 - Mar 2018",
+      image: "/images/games/the-commando.png",
       links: {
         video: "https://www.youtube.com/watch?v=oiI29Lnf-QQ"
       }
@@ -153,12 +161,15 @@ export default function Portfolio() {
       <nav className={`fixed top-0 w-full z-50 backdrop-blur-sm border-b ${isDarkMode ? 'bg-gray-900/95 border-gray-800' : 'bg-white/95 border-gray-200'}`} role="navigation" aria-label="Main navigation">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center font-bold text-white">
-                ΩZ
-              </div>
-              <span className="font-bold text-xl">OmegaZero Studios</span>
-            </div>
+            <button
+              onClick={() => scrollToSection('home')}
+              className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+              aria-label="Go to home"
+            >
+              <span className="font-bold text-xl bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                Nazmul Haque
+              </span>
+            </button>
 
             <div className="hidden md:flex items-center space-x-8">
               {['home', 'games', 'about', 'skills', 'contact'].map((item) => (
@@ -240,8 +251,15 @@ export default function Portfolio() {
         {/* Hero Section */}
         <section id="home" aria-labelledby="hero-heading" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center space-y-6">
-          <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center font-bold text-5xl text-white mb-6">
-            NH
+          <div className="w-32 h-32 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600 mb-6 ring-4 ring-blue-500/30">
+            <Image
+              src="/images/profile/profile-pic.jpg"
+              alt="Md Nazmul Haque Chowdhury - Lead Game Developer"
+              width={128}
+              height={128}
+              className="w-full h-full object-cover"
+              priority
+            />
           </div>
           <h1 id="hero-heading" className="text-5xl sm:text-6xl font-bold">
             <span>Md Nazmul Haque</span>
@@ -255,7 +273,7 @@ export default function Portfolio() {
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-4">
             <div className={`px-6 py-3 rounded-lg shadow-lg ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
-              <div className="text-3xl font-bold text-blue-500">6+</div>
+              <div className="text-3xl font-bold text-blue-500">7+</div>
               <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>Years Experience</div>
             </div>
             <div className={`px-6 py-3 rounded-lg shadow-lg ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
@@ -335,8 +353,14 @@ export default function Portfolio() {
               </div>
               <div className={`rounded-xl p-8 flex items-center justify-center ${isDarkMode ? 'bg-gradient-to-br from-blue-900/20 to-purple-900/20' : 'bg-gradient-to-br from-blue-100 to-purple-100'}`}>
                 <div className="text-center">
-                  <div className="w-48 h-48 mx-auto rounded-3xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-6xl mb-6">
-                    🎲
+                  <div className="w-48 h-48 mx-auto rounded-3xl overflow-hidden shadow-2xl mb-6">
+                    <Image
+                      src={games[0].image}
+                      alt={`${games[0].title} game logo`}
+                      width={192}
+                      height={192}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                     Team: {games[0].team} | {games[0].duration}
@@ -357,9 +381,15 @@ export default function Portfolio() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {games.slice(1).map((game, index) => (
-              <div key={index} className={`rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
-                <div className={`h-48 flex items-center justify-center text-6xl ${isDarkMode ? 'bg-gradient-to-br from-gray-700 to-gray-800' : 'bg-gradient-to-br from-gray-200 to-gray-300'}`}>
-                  {index === 0 ? '💧' : index === 1 ? '🔥' : index === 2 ? '🎯' : index === 3 ? '🧪' : '🎖️'}
+              <div key={index} className={`rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:scale-[1.02] ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+                <div className={`h-48 relative overflow-hidden ${isDarkMode ? 'bg-gradient-to-br from-gray-700 to-gray-800' : 'bg-gradient-to-br from-gray-200 to-gray-300'}`}>
+                  <Image
+                    src={game.image}
+                    alt={`${game.title} game logo`}
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
                 </div>
                 <div className="p-6 space-y-4">
                   <div>
@@ -408,46 +438,122 @@ export default function Portfolio() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 id="about-heading" className="text-4xl font-bold mb-4">About Me</h2>
-            <p className={isDarkMode ? 'text-gray-400' : 'text-gray-600'}>6+ years of professional game development experience</p>
+            <p className={isDarkMode ? 'text-gray-400' : 'text-gray-600'}>7+ years of professional game development experience</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
+
+          {/* Professional Summary */}
+          <div className={`rounded-xl p-8 shadow-lg mb-8 ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
+            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Professional Summary</h3>
+            <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+              Seasoned Lead Game Developer with <span className="text-blue-400 font-semibold">7+ years</span> of hands-on experience in the gaming industry.
+              Specialized in <span className="text-purple-400 font-semibold">Unity3D development</span>, <span className="text-blue-400 font-semibold">multiplayer systems architecture</span>,
+              and <span className="text-purple-400 font-semibold">cross-platform game deployment</span>. Successfully shipped <span className="text-blue-400 font-semibold">15+ games</span> across
+              Android, iOS, WebGL, Windows, and Mac platforms. Proven track record of leading development teams,
+              architecting scalable multiplayer solutions using WebRTC and Socket-based networking, and delivering
+              polished gaming experiences in Casino, Puzzle, HyperCasual, and Strategic game genres. Strong foundation
+              in algorithms and data structures with competitive programming background (ACM ICPC contestant).
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
             <div className={`rounded-xl p-8 shadow-lg ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
               <h3 className="text-2xl font-bold mb-6">Professional Journey</h3>
               <div className="space-y-6">
+                {/* Crapsee Corp */}
                 <div className={`pb-6 border-b ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`}>
                   <div className="flex justify-between items-start mb-2">
                     <div>
                       <h4 className="font-bold text-lg">Lead Game Developer</h4>
-                      <p className="text-blue-400 text-sm">Crapsee Corp.</p>
+                      <a href="https://www.crapsee.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 text-sm hover:underline">Crapsee Corp.</a>
                     </div>
-                    <span className="text-xs text-gray-500 whitespace-nowrap ml-4">Feb 2023 - Present</span>
+                    <span className="text-xs text-gray-500 whitespace-nowrap ml-4 bg-green-500/10 text-green-400 px-2 py-1 rounded">Feb 2023 - Present</span>
                   </div>
-                  <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                    Overseeing design and programming of games. Planning development for future versions.
-                  </p>
+                  <ul className={`text-sm space-y-1 mt-3 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                    <li>• Overseeing the design and programming of games</li>
+                    <li>• Planning new development in future versions of Crapsee and other games</li>
+                    <li>• Bridging communication with ORANGEBLACK Software, sister concern</li>
+                    <li>• Setting up and maintaining web tools, publishing to Play Store, App Store</li>
+                    <li>• Programming and maintaining the initial version of Crapsee</li>
+                  </ul>
                 </div>
+
+                {/* ORANGEBLACK Software */}
                 <div className={`pb-6 border-b ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`}>
                   <div className="flex justify-between items-start mb-2">
                     <div>
                       <h4 className="font-bold text-lg">Game Developer</h4>
-                      <p className="text-blue-400 text-sm">ORANGEBLACK Software Inc.</p>
+                      <a href="https://www.orangeblack.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 text-sm hover:underline">ORANGEBLACK Software Inc.</a>
                     </div>
-                    <span className="text-xs text-gray-500 whitespace-nowrap ml-4">May 2020 - Jan 2023</span>
+                    <span className="text-xs text-gray-500 whitespace-nowrap ml-4">May 2021 - Feb 2023</span>
                   </div>
-                  <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                    Developed mobile, web, and PC games. Designed Crapsee multiplayer simulation game.
-                  </p>
+                  <ul className={`text-sm space-y-1 mt-3 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                    <li>• Analysis and development of mobile, web, and PC games</li>
+                    <li>• Specialized in Poker, Casino, and Puzzle genre games</li>
+                    <li>• Multiplayer architecture, gameplay design, and level design</li>
+                    <li>• Designed & developed Crapsee (Android, iOS, WebGL, Windows, MAC)</li>
+                  </ul>
                 </div>
-                <div className="pb-6">
+
+                {/* Be Yourself Games */}
+                <div className={`pb-6 border-b ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`}>
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <h4 className="font-bold text-lg">Game Developer</h4>
+                      <a href="https://www.beyourselfgames.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 text-sm hover:underline">Be Yourself Games</a>
+                    </div>
+                    <span className="text-xs text-gray-500 whitespace-nowrap ml-4">Mar 2020 - Nov 2020</span>
+                  </div>
+                  <ul className={`text-sm space-y-1 mt-3 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                    <li>• Development of Android and iOS games</li>
+                    <li>• HyperCasual, Casual, Top-down Strategic games</li>
+                    <li>• Designed and developed 5+ games for publishers</li>
+                  </ul>
+                </div>
+
+                {/* AGAMiLabs Lead */}
+                <div className={`pb-6 border-b ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`}>
                   <div className="flex justify-between items-start mb-2">
                     <div>
                       <h4 className="font-bold text-lg">Lead Game Developer</h4>
-                      <p className="text-blue-400 text-sm">AGAMiLabs Ltd.</p>
+                      <a href="https://www.agamilabs.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 text-sm hover:underline">AGAMiLabs Ltd.</a>
                     </div>
                     <span className="text-xs text-gray-500 whitespace-nowrap ml-4">Feb 2019 - May 2019</span>
                   </div>
-                  <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                    Led team of 5-10 members developing mobile games including AR and VR experiences.
+                  <ul className={`text-sm space-y-1 mt-3 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                    <li>• Led team developing Android and iOS games</li>
+                    <li>• Casual, Puzzle, Action, and Strategic games</li>
+                    <li>• Created reusable VFX assets and APIs</li>
+                    <li>• Trained intern on gameplay programming</li>
+                  </ul>
+                </div>
+
+                {/* AGAMiLabs Developer */}
+                <div className={`pb-6 border-b ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`}>
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <h4 className="font-bold text-lg">Game Developer</h4>
+                      <a href="https://www.agamilabs.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 text-sm hover:underline">AGAMiLabs Ltd.</a>
+                    </div>
+                    <span className="text-xs text-gray-500 whitespace-nowrap ml-4">Nov 2017 - Jan 2019</span>
+                  </div>
+                  <ul className={`text-sm space-y-1 mt-3 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                    <li>• Gameplay Programming</li>
+                    <li>• UI/UX and VFX design</li>
+                    <li>• Analyzed and implemented VR/AR technologies</li>
+                  </ul>
+                </div>
+
+                {/* MiddayDreamz */}
+                <div className="pb-6">
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <h4 className="font-bold text-lg">Gameplay Programmer (Intern)</h4>
+                      <p className="text-blue-400 text-sm">MiddayDreamz</p>
+                    </div>
+                    <span className="text-xs text-gray-500 whitespace-nowrap ml-4">May 2017 - Oct 2017</span>
+                  </div>
+                  <p className={`text-sm mt-3 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                    Started professional journey with gameplay programming fundamentals
                   </p>
                 </div>
               </div>
@@ -495,25 +601,31 @@ export default function Portfolio() {
             <div className="text-center mb-12">
               <h2 id="skills-heading" className="text-4xl font-bold mb-4">Technical Skills</h2>
             <p className={isDarkMode ? 'text-gray-400' : 'text-gray-600'}>
-              A = Team Lead/Managerial • B = Professional • C = Personal Projects
+              A = Team Lead/Managerial • B = Professional • C = Familiar/Personal Projects
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Game Development & Engines */}
             <div className={`rounded-xl p-8 shadow-lg ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
-              <h3 className="text-xl font-bold mb-6">Game Development</h3>
+              <h3 className="text-xl font-bold mb-6 flex items-center">
+                <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-white text-sm mr-3">G</span>
+                Game Development
+              </h3>
               <div className="space-y-4">
                 {[
                   { name: "Unity3D", level: "A" },
                   { name: "C#", level: "A" },
                   { name: "Gameplay Programming", level: "A" },
                   { name: "Multiplayer Systems", level: "A" },
-                  { name: "Unreal Engine", level: "C" }
+                  { name: "WebRTC", level: "A" },
+                  { name: "Socket.IO", level: "A" },
+                  { name: "VR/AR Development", level: "B" }
                 ].map((skill) => (
                   <div key={skill.name}>
                     <div className="flex justify-between items-center mb-2">
                       <span className="font-semibold">{skill.name}</span>
                       <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                        skill.level === 'A' 
+                        skill.level === 'A'
                           ? 'bg-green-100 text-green-700'
                           : skill.level === 'B'
                           ? 'bg-blue-100 text-blue-700'
@@ -523,10 +635,10 @@ export default function Portfolio() {
                       </span>
                     </div>
                     <div className={`w-full h-2 rounded-full overflow-hidden ${isDarkMode ? 'bg-gray-700' : 'bg-gray-200'}`}>
-                      <div 
+                      <div
                         className={`h-full rounded-full ${
-                          skill.level === 'A' ? 'bg-green-500 w-full' 
-                          : skill.level === 'B' ? 'bg-blue-500 w-4/5' 
+                          skill.level === 'A' ? 'bg-green-500 w-full'
+                          : skill.level === 'B' ? 'bg-blue-500 w-4/5'
                           : 'bg-purple-500 w-3/5'
                         }`}
                       />
@@ -535,21 +647,69 @@ export default function Portfolio() {
                 ))}
               </div>
             </div>
+
+            {/* Programming Languages */}
             <div className={`rounded-xl p-8 shadow-lg ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
-              <h3 className="text-xl font-bold mb-6">Version Control & PM</h3>
+              <h3 className="text-xl font-bold mb-6 flex items-center">
+                <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center text-white text-sm mr-3">P</span>
+                Programming Languages
+              </h3>
               <div className="space-y-4">
                 {[
+                  { name: "C#", level: "A" },
+                  { name: "C/C++", level: "A" },
+                  { name: "TypeScript", level: "B" },
+                  { name: "JavaScript", level: "B" },
+                  { name: "HTML/CSS", level: "B" },
+                  { name: "Java", level: "C" },
+                  { name: "SQL", level: "C" },
+                  { name: "Python", level: "C" }
+                ].map((skill) => (
+                  <div key={skill.name}>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="font-semibold">{skill.name}</span>
+                      <span className={`px-3 py-1 rounded-full text-xs font-bold ${
+                        skill.level === 'A'
+                          ? 'bg-green-100 text-green-700'
+                          : skill.level === 'B'
+                          ? 'bg-blue-100 text-blue-700'
+                          : 'bg-purple-100 text-purple-700'
+                      }`}>
+                        {skill.level}
+                      </span>
+                    </div>
+                    <div className={`w-full h-2 rounded-full overflow-hidden ${isDarkMode ? 'bg-gray-700' : 'bg-gray-200'}`}>
+                      <div
+                        className={`h-full rounded-full ${
+                          skill.level === 'A' ? 'bg-green-500 w-full'
+                          : skill.level === 'B' ? 'bg-blue-500 w-4/5'
+                          : 'bg-purple-500 w-3/5'
+                        }`}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Version Control & DevOps */}
+            <div className={`rounded-xl p-8 shadow-lg ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+              <h3 className="text-xl font-bold mb-6 flex items-center">
+                <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-white text-sm mr-3">V</span>
+                Version Control & DevOps
+              </h3>
+              <div className="space-y-4">
+                {[
+                  { name: "Git", level: "A" },
                   { name: "Plastic SCM", level: "A" },
-                  { name: "GitHub", level: "A" },
-                  { name: "Trello", level: "A" },
-                  { name: "Perforce", level: "B" },
-                  { name: "Slack", level: "B" }
+                  { name: "Azure DevOps", level: "A" },
+                  { name: "GitHub", level: "A" }
                 ].map((skill) => (
                   <div key={skill.name}>
                     <div className="flex justify-between items-center mb-2">
                       <span className="font-semibold">{skill.name}</span>
                       <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                        skill.level === 'A' 
+                        skill.level === 'A'
                           ? 'bg-green-100 text-green-700'
                           : skill.level === 'B'
                           ? 'bg-blue-100 text-blue-700'
@@ -559,10 +719,10 @@ export default function Portfolio() {
                       </span>
                     </div>
                     <div className={`w-full h-2 rounded-full overflow-hidden ${isDarkMode ? 'bg-gray-700' : 'bg-gray-200'}`}>
-                      <div 
+                      <div
                         className={`h-full rounded-full ${
-                          skill.level === 'A' ? 'bg-green-500 w-full' 
-                          : skill.level === 'B' ? 'bg-blue-500 w-4/5' 
+                          skill.level === 'A' ? 'bg-green-500 w-full'
+                          : skill.level === 'B' ? 'bg-blue-500 w-4/5'
                           : 'bg-purple-500 w-3/5'
                         }`}
                       />
@@ -571,20 +731,27 @@ export default function Portfolio() {
                 ))}
               </div>
             </div>
+
+            {/* Tools & IDEs */}
             <div className={`rounded-xl p-8 shadow-lg ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
-              <h3 className="text-xl font-bold mb-6">3D & Design</h3>
+              <h3 className="text-xl font-bold mb-6 flex items-center">
+                <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white text-sm mr-3">T</span>
+                Tools & IDEs
+              </h3>
               <div className="space-y-4">
                 {[
-                  { name: "Photoshop", level: "C" },
-                  { name: "Blender", level: "C" },
-                  { name: "Moho Anime Studio", level: "B" },
-                  { name: "3DS MAX", level: "C" }
+                  { name: "VS Code", level: "A" },
+                  { name: "Visual Studio", level: "A" },
+                  { name: "Trello", level: "A" },
+                  { name: "Slack", level: "A" },
+                  { name: "MongoDB", level: "B" },
+                  { name: "MySQL", level: "C" }
                 ].map((skill) => (
                   <div key={skill.name}>
                     <div className="flex justify-between items-center mb-2">
                       <span className="font-semibold">{skill.name}</span>
                       <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                        skill.level === 'A' 
+                        skill.level === 'A'
                           ? 'bg-green-100 text-green-700'
                           : skill.level === 'B'
                           ? 'bg-blue-100 text-blue-700'
@@ -594,10 +761,10 @@ export default function Portfolio() {
                       </span>
                     </div>
                     <div className={`w-full h-2 rounded-full overflow-hidden ${isDarkMode ? 'bg-gray-700' : 'bg-gray-200'}`}>
-                      <div 
+                      <div
                         className={`h-full rounded-full ${
-                          skill.level === 'A' ? 'bg-green-500 w-full' 
-                          : skill.level === 'B' ? 'bg-blue-500 w-4/5' 
+                          skill.level === 'A' ? 'bg-green-500 w-full'
+                          : skill.level === 'B' ? 'bg-blue-500 w-4/5'
                           : 'bg-purple-500 w-3/5'
                         }`}
                       />
@@ -605,6 +772,102 @@ export default function Portfolio() {
                   </div>
                 ))}
               </div>
+            </div>
+
+            {/* 3D & Design */}
+            <div className={`rounded-xl p-8 shadow-lg ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+              <h3 className="text-xl font-bold mb-6 flex items-center">
+                <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-white text-sm mr-3">D</span>
+                3D & Design
+              </h3>
+              <div className="space-y-4">
+                {[
+                  { name: "Photoshop", level: "B" },
+                  { name: "Moho Anime Studio", level: "B" },
+                  { name: "Blender", level: "C" },
+                  { name: "3DS MAX", level: "C" },
+                  { name: "Mixamo Fuse", level: "C" }
+                ].map((skill) => (
+                  <div key={skill.name}>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="font-semibold">{skill.name}</span>
+                      <span className={`px-3 py-1 rounded-full text-xs font-bold ${
+                        skill.level === 'A'
+                          ? 'bg-green-100 text-green-700'
+                          : skill.level === 'B'
+                          ? 'bg-blue-100 text-blue-700'
+                          : 'bg-purple-100 text-purple-700'
+                      }`}>
+                        {skill.level}
+                      </span>
+                    </div>
+                    <div className={`w-full h-2 rounded-full overflow-hidden ${isDarkMode ? 'bg-gray-700' : 'bg-gray-200'}`}>
+                      <div
+                        className={`h-full rounded-full ${
+                          skill.level === 'A' ? 'bg-green-500 w-full'
+                          : skill.level === 'B' ? 'bg-blue-500 w-4/5'
+                          : 'bg-purple-500 w-3/5'
+                        }`}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Core Competencies */}
+            <div className={`rounded-xl p-8 shadow-lg ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+              <h3 className="text-xl font-bold mb-6 flex items-center">
+                <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center text-white text-sm mr-3">C</span>
+                Core Competencies
+              </h3>
+              <div className="space-y-4">
+                {[
+                  { name: "Algorithm & Data Structures", level: "A" },
+                  { name: "Problem Solving", level: "A" },
+                  { name: "OOP", level: "A" },
+                  { name: "Dynamic Programming", level: "A" },
+                  { name: "Team Leadership", level: "A" },
+                  { name: "Critical Thinking", level: "A" }
+                ].map((skill) => (
+                  <div key={skill.name}>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="font-semibold">{skill.name}</span>
+                      <span className={`px-3 py-1 rounded-full text-xs font-bold ${
+                        skill.level === 'A'
+                          ? 'bg-green-100 text-green-700'
+                          : skill.level === 'B'
+                          ? 'bg-blue-100 text-blue-700'
+                          : 'bg-purple-100 text-purple-700'
+                      }`}>
+                        {skill.level}
+                      </span>
+                    </div>
+                    <div className={`w-full h-2 rounded-full overflow-hidden ${isDarkMode ? 'bg-gray-700' : 'bg-gray-200'}`}>
+                      <div
+                        className={`h-full rounded-full ${
+                          skill.level === 'A' ? 'bg-green-500 w-full'
+                          : skill.level === 'B' ? 'bg-blue-500 w-4/5'
+                          : 'bg-purple-500 w-3/5'
+                        }`}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Problem Solving Stats */}
+          <div className={`mt-8 rounded-xl p-8 shadow-lg ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+            <div className="text-center">
+              <h3 className="text-xl font-bold mb-4">Competitive Programming</h3>
+              <p className={`text-lg ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                Solved <span className="text-blue-400 font-bold text-2xl">250+</span> programming problems on platforms like
+                <span className="text-purple-400 font-semibold"> UVA Online Judge</span>,
+                <span className="text-blue-400 font-semibold"> Codeforces</span>, and
+                <span className="text-purple-400 font-semibold"> LightOJ</span>
+              </p>
             </div>
           </div>
         </div>
@@ -743,16 +1006,15 @@ export default function Portfolio() {
       <footer className={`py-8 px-4 border-t ${isDarkMode ? 'bg-gray-900 border-gray-800' : 'bg-white border-gray-200'}`} role="contentinfo">
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex items-center justify-center space-x-2 mb-4">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center font-bold text-white text-sm">
-              ΩZ
-            </div>
-            <span className="font-bold">OmegaZero Studios</span>
+            <span className="font-bold text-lg bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+              Md Nazmul Haque Chowdhury
+            </span>
           </div>
           <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-            © 2025 Md Nazmul Haque Chowdhury. All rights reserved.
+            © {new Date().getFullYear()} Md Nazmul Haque Chowdhury. All rights reserved.
           </p>
           <p className={`text-xs mt-2 ${isDarkMode ? 'text-gray-500' : 'text-gray-500'}`}>
-            Built with Next.js, React & Tailwind CSS
+            Lead Game Developer | Built with Next.js, React & Tailwind CSS
           </p>
         </div>
       </footer>
