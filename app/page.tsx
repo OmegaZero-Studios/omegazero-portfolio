@@ -167,7 +167,7 @@ export default function Portfolio() {
               aria-label="Go to home"
             >
               <span className="font-bold text-xl bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                Nazmul Haque
+              
               </span>
             </button>
 
