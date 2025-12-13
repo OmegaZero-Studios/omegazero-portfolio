@@ -119,7 +119,6 @@ export default function RootLayout({
         "@type": "Person",
         "@id": `${siteUrl}/#person`,
         name: "Md Nazmul Haque Chowdhury",
-        alternateName: "Nazmul Haque",
         url: siteUrl,
         email: "nazmulredoy.csecu@gmail.com",
         telephone: "+880-1852-114544",
